@@ -1,2 +1,5 @@
-<h1>Physicians#index</h1>
-<p>Find me in app/views/physicians/index.html.erb</p>
+<h1>Physicians</h1>
+
+<% @physician.each do |physician|%>
+<%= <%= link_to 'physician.dr_name', physician_path(@physician) %>%>
+<%end%>
