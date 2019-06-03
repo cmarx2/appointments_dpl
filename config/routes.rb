@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :physicians do
-    resources :appointments
-  end
+
+ root 'pages#home'
+  get "/pages/:page" => "pages#show"
+  resources :physicians
+
   resources :patients
 end
