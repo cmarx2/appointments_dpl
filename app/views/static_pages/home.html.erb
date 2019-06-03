@@ -1,0 +1,11 @@
+<h1>DLP Hospital</h1>
+
+<div>
+  <h2>Login as Physician</h2>
+  <%= form_for @physicians do |f| %>
+    <%= f.label :physician %>
+    <%= f.select :physician, Physicians.all { |p| [p.dr_name, p.id] }%>
+  <br />
+    <%= f.submit%>
+  <%end%>
+</div>
