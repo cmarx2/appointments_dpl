@@ -1,13 +1,11 @@
 <h1><%=@physician.dr_name%></h1>
 <h2>Appointments</h2>
 <% @physician.appointments.each do |appointment|%>
-  <p><%=appointment.date %></p>
+  <p><%=link_to appointment.date, physician_appointments_path(@physician) %></p>
 <% end %>
 
-<h2>Patients</h2>
-<% @physician.patient.each do |patient| %>
-  <p><%=patient.patient_name%></p>
-<%end%>
+
+
 
 
 
