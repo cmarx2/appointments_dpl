@@ -1,5 +1,11 @@
 <h1><%= @patient.patient_name %></h1>
 
-<h2> Show Appointments Here </h2>
+<%=link_to 'Edit Patient', edit_patient_path(@patient)%>
+<%=link_to 'Delete Patient', @patient, method: :delete%>
 
-<%= link_to 'Edit', edit_patient_path %>
+<h2>Appointments</h2>
+<%= link_to 'Make an Appointment', new_patient_appointment_path(@patient)%>
+<% @patient.appointments.each do |appointment|%>
+  <p><%= link_to appointment.date, patient_appointment_path(@patient, appointment) %></p>
+<% end %>
+
