@@ -1,2 +1,7 @@
-<h1>Appointments#edit</h1>
-<p>Find me in app/views/appointments/edit.html.erb</p>
+<h1>Enter a new Date</h1>
+<%= form_for [@physician, @comment] do |f| %>
+ <%= f.label :date %>
+ <%= f.text_field :date, required: true %>
+ <br />
+ <%= f.submit %>
+<% end %>

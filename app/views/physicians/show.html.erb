@@ -1,13 +1,19 @@
 <h1><%=@physician.dr_name%></h1>
+
+<%=link_to 'Edit Physician', edit_physician_path(@physician)%>
+<%=link_to 'Delete Physician', @physician, method: :delete%>
+
 <h2>Appointments</h2>
 <% @physician.appointments.each do |appointment|%>
-  <p><%=link_to appointment.date, physician_appointments_path(@physician) %></p>
+  <p><%= link_to appointment.date, physician_appointment_path(@physician, appointment) %></p>
+<% end %>
+
+<h2>Patients</h2>
+<% @physician.patients.each do |patient|%>
+  <p><%= patient.patient_name %></p>
 <% end %>
 
 
 
 
 
-
-<%=link_to 'Edit Physician', edit_physician_path(@physician)%>
-<%=link_to 'Delete Physician', @physician, method: :delete%>
