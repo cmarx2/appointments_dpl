@@ -1,0 +1,7 @@
+<h1><%=@physician.dr_name%></h1>
+
+<%= form_for(@physician) do |f|%>
+<%= f.label :dr_name %>
+<%= f.text_field :dr_name %>
+<%= f.submit %>
+<%end%>
