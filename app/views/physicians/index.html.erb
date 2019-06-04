@@ -1,5 +1,7 @@
 <h1>Physicians</h1>
 
-<% @physician.each do |physician|%>
-<%= link_to 'physician.dr_name', physician_path(@physician) %>
+<% @physicians.each do |physician|%>
+<p><%= link_to physician.dr_name, physician_path(physician) %></p>
 <%end%>
+
+<%= link_to 'Add a Physician', new_physician_path %>

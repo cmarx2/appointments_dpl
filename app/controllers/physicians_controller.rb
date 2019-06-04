@@ -1,29 +1,41 @@
 class PhysiciansController < ApplicationController
-  before_action :set_physician, only: [:show, :destroy]
+  before_action :set_physician, only: [:show, :edit, :destroy, :update]
 
   def index
     @physicians = Physician.all
   end
 
   def show
+    
   end
 
   def new
-    @physicians = Physician.new
+    @physician = Physician.new
+  end
+
+  def edit
+  end
+
+  def update
+    if @physician.update(physician_params)
+      redirect_to @physician
+    else
+      render :edit
+    end
   end
 
   def create
-    @physicians = Physician.new(Physician_params)
+    @physician = Physician.new(physician_params)
 
-    if @physicians.save
-      redirect_to @physicians
+    if @physician.save
+      redirect_to @physician
     else
       render :new
     end
   end
 
   def destroy 
-    @physicians.destroy
+    @physician.destroy
     redirect_to physicians_path
   end
 
