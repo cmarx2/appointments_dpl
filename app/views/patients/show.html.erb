@@ -4,7 +4,7 @@
 <%=link_to 'Delete Patient', @patient, method: :delete%>
 
 <h2>Appointments</h2>
-<%= link_to 'Make an Appointment', new_patient_appointment_path(@patient)%>
+<%= link_to 'Make an Appointment', new_patient_appointment_path([@patient, @physician])%>
 <% @patient.appointments.each do |appointment|%>
   <p><%= link_to appointment.date, patient_appointment_path(@patient, appointment) %></p>
 <% end %>
