@@ -1,11 +1,23 @@
 <h1>Patients</h1>
 
-<ul>
-  <% @patients.each do |patient|%>
-    <li>
-    <%= link_to patient.patient_name, patient %>
-    </li>
-  <%end%>
-</ul>
+<div class="ui three stackable cards">
+<% @patients.each do |patient|%>
+<a class="card" href="<%=patient_path(patient)%>">
+  <div class="content">
+    <div class="header">Patient</div>
+    <div class="meta">
+      <span class="category"><%=patient.patient_name%></span>
+    </div>
+    <div class="description">
+      <p>Click your name to view your appointments</p>
+    </div>
+  </div>
+  <div class="extra content">
+    <div class="right floated author">
+      <img class="ui avatar image" src="https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/2475/s300/beaker-white-256.png"> 
+    </div>
+  </div>
+</a>
+<%end%>
+</div>
 
-<%= link_to 'New Patient', new_patient_path %>
