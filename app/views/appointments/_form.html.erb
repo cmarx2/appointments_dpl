@@ -1,0 +1,12 @@
+<h1><%= @appointment.id ? 'edit appointment' : 'create appt' %></h1>
+<%= form_with(model: [@patient, @appointment], local: true) do |f| %>
+<div>
+  <%= f.label :date %>
+  <%= f.text_field :date, required: true, autofocus: true %>
+</div>
+<div>
+  <%= f.label :physician %>
+  <%= f.select :physician_id, Physician.all.collect { |p| [p.dr_name, p.id]} %>
+</div>
+  <%= f.submit %>
+<% end %>

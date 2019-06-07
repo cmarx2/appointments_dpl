@@ -14,8 +14,7 @@ class PatientsController < ApplicationController
 
   def new
     @patient = Patient.new
-    @physician = Physician.find(params[:id]
- 
+    render partial: "form"
   end
 
   def create
@@ -29,7 +28,7 @@ class PatientsController < ApplicationController
   end
 
   def edit
-    
+    render partial: "form"
   end
 
   def update
