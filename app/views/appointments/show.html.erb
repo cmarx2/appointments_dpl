@@ -1,3 +1,13 @@
-<h1><%=@appointment.date%></h1>
+<h1><%=@appointment.patient_name%></h1>
 
-<%= button_to "Edit Appointment", edit_physician_appointment_path(@physician, @appointment), :method => "get" %>
+<%=link_to 'Edit Patient', edit_patient_path(@patient)%>
+<%=link_to 'Delete Patient', @patient, method: :delete%>
+
+<h2>Appointments</h2>
+<%= link_to 'Make an Appointment', new_patient_appointment_path(@patient)%><br />
+<% @patient.appointments.each do |appointment|%>
+  <%= link_to appointment.date, patient_appointment_path(@patient, appointment) %>
+  <%= link_to "edit appointment", edit_patient_appointment_path(@patient, appointment) %>
+  <%= link_to "delete appointment", patient_appointment_path(@patient, appointment), method: :delete %>
+<br />
+<% end %>

@@ -1,5 +1,4 @@
 class PatientsController < ApplicationController
-
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
 
 
@@ -8,14 +7,11 @@ class PatientsController < ApplicationController
   end
 
   def show
-
-
   end
 
   def new
     @patient = Patient.new
-    @physician = Physician.find(params[:id]
- 
+    render partial: "form" 
   end
 
   def create
@@ -29,7 +25,7 @@ class PatientsController < ApplicationController
   end
 
   def edit
-    
+    render partial: "form" 
   end
 
   def update
@@ -43,7 +39,6 @@ class PatientsController < ApplicationController
 
   def destroy
     @patient.destroy
-
     redirect_to patients_path
   end
 
@@ -55,6 +50,4 @@ class PatientsController < ApplicationController
   def patient_params
     params.require(:patient).permit(:patient_name)
   end
-
-
 end

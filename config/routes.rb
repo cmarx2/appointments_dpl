@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     resources :appointments
   end
   resources :patients do 
-  resources :appointments, only: [:index, :new, :create, :destroy ]
+  resources :appointments
   end
 end
