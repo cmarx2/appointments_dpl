@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
- root 'pages#home'
-  get "/pages/:page" => "pages#show"
+  devise_for :users
+   root 'pages#home'
+     get "/pages/:page" => "pages#show"
   resources :physicians do
     resources :appointments
   end

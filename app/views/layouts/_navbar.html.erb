@@ -6,5 +6,6 @@
     <%= link_to 'New Physician', new_physician_path, class: 'item', id: 'nav'%>
     <%= link_to 'Patients', patients_path, class: 'item', id: 'nav'%>
     <%= link_to 'New Patient', new_patient_path, class: 'item', id: 'nav'%>
+       <%= link_to 'Log Out', destroy_user_session_path, class: 'item', id: 'nav', method: :delete %>
   </div>
 </nav>
